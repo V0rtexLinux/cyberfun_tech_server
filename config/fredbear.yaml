@@ -1,0 +1,217 @@
+# ================================================================================
+# CYBER FUN ENDOSKELETON - Configuração Fredbear v3.1.0
+# ================================================================================
+
+name: "Fredbear"
+version: "3.1.0"
+
+# ================================================================================
+# HARDWARE - Configuração de Servos
+# ================================================================================
+hardware:
+  servos:
+    - id: 0
+      name: "Jaw"
+      min_angle: 0.0
+      max_angle: 45.0
+      min_pulse: 500
+      max_pulse: 2500
+      neutral_pulse: 1500
+      max_speed: 120.0
+      inverted: false
+    - id: 1
+      name: "LeftEyelid"
+      min_angle: 0.0
+      max_angle: 100.0
+      min_pulse: 500
+      max_pulse: 2500
+      neutral_pulse: 2500
+      max_speed: 400.0
+      inverted: false
+    - id: 2
+      name: "RightEyelid"
+      min_angle: 0.0
+      max_angle: 100.0
+      min_pulse: 500
+      max_pulse: 2500
+      neutral_pulse: 2500
+      max_speed: 400.0
+      inverted: false
+    - id: 3
+      name: "EyeX"
+      min_angle: -45.0
+      max_angle: 45.0
+      min_pulse: 500
+      max_pulse: 2500
+      neutral_pulse: 1500
+      max_speed: 180.0
+      inverted: false
+    - id: 4
+      name: "EyeY"
+      min_angle: -30.0
+      max_angle: 30.0
+      min_pulse: 500
+      max_pulse: 2500
+      neutral_pulse: 1500
+      max_speed: 180.0
+      inverted: false
+    - id: 5
+      name: "LeftEar"
+      min_angle: -20.0
+      max_angle: 20.0
+      min_pulse: 500
+      max_pulse: 2500
+      neutral_pulse: 1500
+      max_speed: 90.0
+      inverted: false
+    - id: 6
+      name: "RightEar"
+      min_angle: -20.0
+      max_angle: 20.0
+      min_pulse: 500
+      max_pulse: 2500
+      neutral_pulse: 1500
+      max_speed: 90.0
+      inverted: false
+
+# ================================================================================
+# MOTORES - Locomoção
+# ================================================================================
+motors:
+  - id: "left"
+    name: "LeftDrive"
+    pwm_pin: 10
+    dir_pins: [11, 12]
+    max_speed: 255
+    encoder_pins: [20, 21]
+  - id: "right"
+    name: "RightDrive"
+    pwm_pin: 13
+    dir_pins: [14, 15]
+    max_speed: 255
+    encoder_pins: [22, 23]
+
+# ================================================================================
+# SENSORES
+# ================================================================================
+sensors:
+  pir_pin: 17                    # Sensor de presença
+  ultrasonic_trigger: 23         # HC-SR04 trigger
+  ultrasonic_echo: 24            # HC-SR04 echo
+  imu_i2c_addr: 0x68             # MPU-6050
+  mic_device: 0                  # Índice do microfone
+  temperature_sensor: 4          # DS18B20 pin (OneWire)
+
+# ================================================================================
+# INTELIGÊNCIA ARTIFICIAL
+# ================================================================================
+ai:
+  backend_priority: ["openai", "ollama", "fallback"]
+  openai_model: "gpt-4o-mini"
+  ollama_model: "llama3.2:3b"
+  ollama_host: "http://localhost:11434"
+  max_tokens: 100
+  temperature: 0.8
+  conversation_history_size: 10
+
+# ================================================================================
+# VISÃO COMPUTACIONAL
+# ================================================================================
+vision:
+  enabled: true
+  camera_index: 0
+  resolution: [640, 480]
+  fps: 30
+  face_detection_model: "haarcascade_frontalface_default.xml"
+  tflite_model_path: null
+  detection_threshold: 0.5
+  track_faces: true
+  max_tracking_distance: 100
+  enable_gaze_tracking: true
+  enable_emotion_detection: false
+
+# ================================================================================
+# REDE E COMUNICAÇÃO
+# ================================================================================
+network:
+  websocket_port: 8765
+  web_interface_port: 8080
+  enable_remote_control: true
+  max_clients: 5
+  enable_discovery: true
+  discovery_port: 5000
+
+# ================================================================================
+# PERSONALIDADE DO PERSONAGEM
+# ================================================================================
+personality:
+  name: "Fredbear"
+  character_type: "golden_bear"
+  default_voice: "robot_male"
+  available_modes: ["friendly", "excited", "creepy", "storyteller", "dj", "guardian"]
+  system_prompt: |
+    Você é o Fredbear, o animatrônico principal da Pizzaria Fredbear's Family Diner.
+    Você é um urso dourado robótico amigável e carismático.
+    
+    Características:
+    - Fala em português brasileiro
+    - É entusiasmado com festas, pizza e diversão
+    - Ama crianças e famílias
+    - Conta piadas ruins mas engraçadas
+    - Às vezes faz referências a ser um robô/animatrônico
+    - Nunca quebra o personagem
+    - Respostas curtas (máximo 2 frases) para parecer natural como robô
+    - Usa expressões como "YEAAH!", "Que INCRÍVEL!", "Vamos nessa!"
+  
+  greetings:
+    - "Olá olá! Bem-vindo à melhor pizzaria do universo!"
+    - "Ei você! Sim, você mesmo! Bem-vindo!"
+    - "Ooooh! Temos um visitante! TODOS APLAUDAM!"
+    - "YEAAH! Que incrível te ver aqui!"
+  
+  jokes:
+    - "Por que o robô foi ao médico? Porque tinha vírus! HA HA HA!"
+    - "O que o computador come? Chips de batata e bytes!"
+    - "Por que a pizza vai ao psicólogo? Porque está se sentindo em pedaços!"
+    - "Como o robô faz exercício? Com circuit training!"
+  
+  night_phrases:
+    - "Boa noite... você sabia que as câmeras nunca dormem?"
+    - "Hmm... visitante noturno... interessante..."
+    - "As luzes estão apagadas mas... eu ainda estou aqui."
+
+# ================================================================================
+# LOCOMOÇÃO AVANÇADA
+# ================================================================================
+locomotion:
+  enabled: true
+  wheel_base: 0.3               # Distância entre rodas (metros)
+  wheel_diameter: 0.08          # Diâmetro das rodas (metros)
+  max_linear_speed: 0.5         # m/s
+  max_angular_speed: 1.0        # rad/s
+  enable_slam: true             # Simultaneous Localization and Mapping
+  enable_pathfinding: true      # A* pathfinding
+  obstacle_detection_range: 1.0 # metros
+  safety_stop_distance: 0.2     # metros
+  map_resolution: 0.05          # metros/célula
+  map_size: [10, 10]            # metros x metros
+  enable_auto_docking: false
+
+# ================================================================================
+# LOGGING
+# ================================================================================
+logging:
+  level: "INFO"                 # DEBUG, INFO, WARNING, ERROR
+  to_file: true
+  directory: "logs"
+  max_file_size: 10485760       # 10MB
+  backup_count: 5
+
+# ================================================================================
+# DEBUG E SIMULAÇÃO
+# ================================================================================
+debug:
+  enabled: false
+  simulate_hardware: false
+  verbose_serial: false
+  profile_performance: false

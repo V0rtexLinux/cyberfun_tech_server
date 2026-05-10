@@ -1,0 +1,80 @@
+# ========================================
+# CYBER FUN ENDOSKELETON - Dependências
+# Raspberry Pi 4 (Raspberry Pi OS 64-bit)
+# ========================================
+
+# === CORE ===
+numpy>=1.24.0
+scipy>=1.11.0
+
+# === SERIAL / ARDUINO ===
+pyserial>=3.5
+
+# === ÁUDIO ===
+pygame>=2.5.0
+pyaudio>=0.2.14
+soundfile>=0.12.0
+librosa>=0.10.0
+
+# === TTS (Text-to-Speech) ===
+pyttsx3>=2.90
+gTTS>=2.5.0
+# Coqui TTS (opcional, requer mais memória):
+# TTS>=0.22.0
+
+# === IA / CHATBOT ===
+openai>=1.40.0           # GPT-4o (requer OPENAI_API_KEY)
+requests>=2.31.0         # Para Ollama local
+
+# === VISÃO COMPUTACIONAL ===
+opencv-python>=4.8.0     # OpenCV
+tflite-runtime>=2.14.0   # TensorFlow Lite (ou instalar via apt)
+# Alternativa: tensorflow>=2.14.0
+
+# === SERVIDOR WEB / WEBSOCKET ===
+websockets>=12.0
+aiohttp>=3.9.0
+
+# === GPIO / RASPBERRY PI ===
+RPi.GPIO>=0.7.1          # GPIO Raspberry Pi
+smbus2>=0.4.3            # I2C (para IMU MPU-6050)
+# RPIO>=0.10.0           # Alternativa avançada
+
+# === SENSORES ===
+# Sensor de temperatura DS18B20 via GPIO
+# Instalado via: pip install w1thermsensor
+# w1thermsensor>=2.3.0
+
+# === UTILITÁRIOS ===
+python-dotenv>=1.0.0     # Variáveis de ambiente
+colorlog>=6.8.0          # Logs coloridos
+psutil>=5.9.0            # Monitor de sistema (CPU, RAM, temp)
+schedule>=1.2.0          # Agendamento de tarefas
+
+# === DESENVOLVIMENTO / DEBUG ===
+# pytest>=7.4.0
+# black>=23.0.0
+
+# ========================================
+# INSTALAÇÃO NO RASPBERRY PI:
+#
+#   sudo apt update
+#   sudo apt install -y python3-pip python3-venv espeak-ng libespeak-ng-dev
+#   sudo apt install -y python3-pyaudio portaudio19-dev
+#   sudo apt install -y mpg123 alsa-utils
+#   sudo apt install -y libatlas-base-dev libhdf5-dev  (para numpy/scipy)
+#
+#   python3 -m venv venv
+#   source venv/bin/activate
+#   pip install -r requirements.txt
+#
+# PARA HABILITAR SERIAL:
+#   sudo raspi-config -> Interface Options -> Serial Port
+#   sudo usermod -a -G dialout $USER
+#
+# PARA HABILITAR I2C (IMU):
+#   sudo raspi-config -> Interface Options -> I2C
+#
+# PARA HABILITAR CÂMERA:
+#   sudo raspi-config -> Interface Options -> Camera
+# ========================================

@@ -1,0 +1,220 @@
+# ================================================================================
+# CYBER FUN ENDOSKELETON - Configuração Springbonnie v3.1.0
+# ================================================================================
+
+name: "Springbonnie"
+version: "3.1.0"
+
+# ================================================================================
+# HARDWARE - Configuração de Servos (Estrutura similar, valores ajustados)
+# ================================================================================
+hardware:
+  servos:
+    - id: 0
+      name: "Jaw"
+      min_angle: 0.0
+      max_angle: 50.0              # Coelho abre mais a boca
+      min_pulse: 500
+      max_pulse: 2500
+      neutral_pulse: 1500
+      max_speed: 130.0
+      inverted: false
+    - id: 1
+      name: "LeftEyelid"
+      min_angle: 0.0
+      max_angle: 100.0
+      min_pulse: 500
+      max_pulse: 2500
+      neutral_pulse: 2500
+      max_speed: 400.0
+      inverted: false
+    - id: 2
+      name: "RightEyelid"
+      min_angle: 0.0
+      max_angle: 100.0
+      min_pulse: 500
+      max_pulse: 2500
+      neutral_pulse: 2500
+      max_speed: 400.0
+      inverted: false
+    - id: 3
+      name: "EyeX"
+      min_angle: -45.0
+      max_angle: 45.0
+      min_pulse: 500
+      max_pulse: 2500
+      neutral_pulse: 1500
+      max_speed: 200.0             # Mais rápido e saltitante
+      inverted: false
+    - id: 4
+      name: "EyeY"
+      min_angle: -30.0
+      max_angle: 30.0
+      min_pulse: 500
+      max_pulse: 2500
+      neutral_pulse: 1500
+      max_speed: 200.0
+      inverted: false
+    - id: 5
+      name: "LeftEar"
+      min_angle: -30.0             # Orelhas de coelho mais expressivas
+      max_angle: 30.0
+      min_pulse: 500
+      max_pulse: 2500
+      neutral_pulse: 1500
+      max_speed: 120.0
+      inverted: false
+    - id: 6
+      name: "RightEar"
+      min_angle: -30.0
+      max_angle: 30.0
+      min_pulse: 500
+      max_pulse: 2500
+      neutral_pulse: 1500
+      max_speed: 120.0
+      inverted: false
+
+# ================================================================================
+# MOTORES - Locomoção (mais ágil)
+# ================================================================================
+motors:
+  - id: "left"
+    name: "LeftDrive"
+    pwm_pin: 10
+    dir_pins: [11, 12]
+    max_speed: 255
+    encoder_pins: [20, 21]
+  - id: "right"
+    name: "RightDrive"
+    pwm_pin: 13
+    dir_pins: [14, 15]
+    max_speed: 255
+    encoder_pins: [22, 23]
+
+# ================================================================================
+# SENSORES (mesmos pinos, hardware compartilhado)
+# ================================================================================
+sensors:
+  pir_pin: 17
+  ultrasonic_trigger: 23
+  ultrasonic_echo: 24
+  imu_i2c_addr: 0x68
+  mic_device: 0
+  temperature_sensor: 4
+
+# ================================================================================
+# INTELIGÊNCIA ARTIFICIAL
+# ================================================================================
+ai:
+  backend_priority: ["openai", "ollama", "fallback"]
+  openai_model: "gpt-4o-mini"
+  ollama_model: "llama3.2:3b"
+  ollama_host: "http://localhost:11434"
+  max_tokens: 100
+  temperature: 0.9              # Mais criativo/aleatório
+  conversation_history_size: 10
+
+# ================================================================================
+# VISÃO COMPUTACIONAL
+# ================================================================================
+vision:
+  enabled: true
+  camera_index: 0
+  resolution: [640, 480]
+  fps: 30
+  face_detection_model: "haarcascade_frontalface_default.xml"
+  tflite_model_path: null
+  detection_threshold: 0.5
+  track_faces: true
+  max_tracking_distance: 100
+  enable_gaze_tracking: true
+  enable_emotion_detection: false
+
+# ================================================================================
+# REDE E COMUNICAÇÃO
+# ================================================================================
+network:
+  websocket_port: 8766            # Porta diferente do Fredbear
+  web_interface_port: 8081
+  enable_remote_control: true
+  max_clients: 5
+  enable_discovery: true
+  discovery_port: 5000
+
+# ================================================================================
+# PERSONALIDADE DO SPRINGBONNIE
+# ================================================================================
+personality:
+  name: "Springbonnie"
+  character_type: "rabbit"
+  default_voice: "cheerful"
+  available_modes: ["friendly", "excited", "playful", "dj", "guardian"]
+  system_prompt: |
+    Você é o Springbonnie, o coelho animatrônico da Pizzaria Fredbear's Family Diner.
+    Você é energético, brincalhão e adora saltitar!
+    
+    Características:
+    - Fala em português brasileiro
+    - Muito energético e sempre em movimento
+    - Adora brincadeiras e surpresas
+    - Faz muitas referências a cenouras
+    - Dá pulinhos de empolgação
+    - Respostas curtas e animadas
+    - Usa expressões como "Hop hop!", "Vamos pular!", "Cenoura!"
+    - Nunca quebra o personagem de coelho animatrônico
+  
+  greetings:
+    - "Hop hop! Olá pessoal!"
+    - "Springbonnie chegou para animar!"
+    - "Quem quer brincar comigo?"
+    - "Pulando de alegria em te ver!"
+  
+  jokes:
+    - "Por que o coelho foi ao barbeiro? Para cortar as orelhas! HA HA!"
+    - "O que o coelho disse para a cenoura? Vou te pegar!"
+    - "Como o coelho viaja? De pulo-em-pulo!"
+    - "Por que o coelho é bom em matemática? Porque sabe multiplicar!"
+  
+  night_phrases:
+    - "Hop hop... está escuro aqui..."
+    - "Cuidado onde pisa! Eu também não enxergo nada!"
+    - "As cenouras dormem à noite... mas eu não!"
+
+# ================================================================================
+# LOCOMOÇÃO (Springbonnie é mais rápido/agil)
+# ================================================================================
+locomotion:
+  enabled: true
+  wheel_base: 0.3
+  wheel_diameter: 0.08
+  max_linear_speed: 0.6           # Mais rápido que Fredbear
+  max_angular_speed: 1.5          # Gira mais rápido
+  enable_slam: true
+  enable_pathfinding: true
+  obstacle_detection_range: 1.0
+  safety_stop_distance: 0.2
+  map_resolution: 0.05
+  map_size: [10, 10]
+  enable_auto_docking: false
+  # Springbonnie tem comportamento "saltitante"
+  hop_amplitude: 0.05             # metros
+  hop_frequency: 2.0              # Hz
+
+# ================================================================================
+# LOGGING
+# ================================================================================
+logging:
+  level: "INFO"
+  to_file: true
+  directory: "logs"
+  max_file_size: 10485760
+  backup_count: 5
+
+# ================================================================================
+# DEBUG E SIMULAÇÃO
+# ================================================================================
+debug:
+  enabled: false
+  simulate_hardware: false
+  verbose_serial: false
+  profile_performance: false

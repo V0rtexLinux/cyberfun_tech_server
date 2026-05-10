@@ -1,0 +1,53 @@
+# ================================================================================
+# CYBER FUN ENDOSKELETON v3.1.0 - Dependências
+# Python 3.9+ | Raspberry Pi 4
+# ================================================================================
+
+# === CORE ===
+numpy>=1.24.0
+scipy>=1.11.0
+pyyaml>=6.0.1
+
+# === SERIAL / ARDUINO ===
+pyserial>=3.5
+
+# === ÁUDIO ===
+pygame>=2.5.0
+pyaudio>=0.2.14
+soundfile>=0.12.0
+librosa>=0.10.0
+
+# === TTS (Text-to-Speech) ===
+pyttsx3>=2.90
+gTTS>=2.5.0
+
+# === IA / CHATBOT ===
+openai>=1.40.0
+requests>=2.31.0
+
+# === VISÃO COMPUTACIONAL ===
+opencv-python>=4.8.0
+tflite-runtime>=2.14.0
+
+# === SERVIDOR WEB / WEBSOCKET ===
+websockets>=12.0
+aiohttp>=3.9.0
+
+# === GPIO / RASPBERRY PI ===
+RPi.GPIO>=0.7.1
+smbus2>=0.4.3
+
+# === UTILITÁRIOS ===
+python-dotenv>=1.0.0
+colorlog>=6.8.0
+psutil>=5.9.0
+schedule>=1.2.0
+
+# === DESENVOLVIMENTO / TESTES ===
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.0.0
+flake8>=6.0.0
+mypy>=1.0.0
+
+# ================================================================================

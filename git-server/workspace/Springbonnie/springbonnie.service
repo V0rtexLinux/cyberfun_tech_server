@@ -1,0 +1,21 @@
+[Unit]
+Description=CyberFun Animatronic System v3.0
+After=network.target sound.target alsa-state.service
+Wants=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/cyberfun
+ExecStart=/home/pi/cyberfun/venv/bin/python3 Fredbear_system/main.py
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+Environment="PYTHONPATH=/home/pi/cyberfun"
+Environment="PYTHONUNBUFFERED=1"
+KillSignal=SIGTERM
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target

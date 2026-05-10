@@ -1,0 +1,41 @@
+modules = ["nodejs-20", "python-3.11"]
+[nix]
+channel = "stable-25_05"
+
+[agent]
+expertMode = true
+stack = "BEST_EFFORT_FALLBACK"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 git-server/server.py"
+waitForPort = 5000
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[deployment]
+deploymentTarget = "autoscale"
+build = ["bash", "-c", "cd website && npm run build"]
+publicDir = "website/out"
+run = ["bash", "-c", "cd website && npm start"]

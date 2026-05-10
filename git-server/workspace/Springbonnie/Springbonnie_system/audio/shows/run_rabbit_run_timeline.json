@@ -1,0 +1,281 @@
+{
+  "version": "1.0",
+  "show_name": "Run, Rabbit, Run",
+  "artist": "Alan Foster - Mack Triplets",
+  "bpm": 120,
+  "duration_ms": 180000,
+  "audio_file": "Run,_Rabbit,_Run_-_Alan_Foster_-_Mack_Triplets.mp3",
+  "events": [
+    {
+      "type": "emotion",
+      "timestamp_ms": 0,
+      "duration_ms": 500,
+      "params": {"emotion": "neutral"}
+    },
+    {
+      "type": "blink",
+      "timestamp_ms": 1000,
+      "duration_ms": 150,
+      "params": {}
+    },
+    {
+      "type": "emotion",
+      "timestamp_ms": 1500,
+      "duration_ms": 300,
+      "params": {"emotion": "happy"}
+    },
+    {
+      "type": "talking_start",
+      "timestamp_ms": 2000,
+      "params": {}
+    },
+    {
+      "type": "eyes",
+      "timestamp_ms": 3000,
+      "duration_ms": 200,
+      "params": {"x": 20, "y": 0}
+    },
+    {
+      "type": "eyes",
+      "timestamp_ms": 3500,
+      "duration_ms": 200,
+      "params": {"x": -20, "y": 0}
+    },
+    {
+      "type": "eyes",
+      "timestamp_ms": 4000,
+      "duration_ms": 200,
+      "params": {"x": 0, "y": 0}
+    },
+    {
+      "type": "wink",
+      "timestamp_ms": 5000,
+      "duration_ms": 200,
+      "params": {"side": "right"}
+    },
+    {
+      "type": "emotion",
+      "timestamp_ms": 6000,
+      "duration_ms": 300,
+      "params": {"emotion": "excited"}
+    },
+    {
+      "type": "eyelids",
+      "timestamp_ms": 7000,
+      "duration_ms": 200,
+      "params": {"openness": 80}
+    },
+    {
+      "type": "eyelids",
+      "timestamp_ms": 7500,
+      "duration_ms": 200,
+      "params": {"openness": 100}
+    },
+    {
+      "type": "ears",
+      "timestamp_ms": 8000,
+      "duration_ms": 300,
+      "params": {"angle": 15}
+    },
+    {
+      "type": "ears",
+      "timestamp_ms": 8500,
+      "duration_ms": 300,
+      "params": {"angle": 0}
+    },
+    {
+      "type": "blink",
+      "timestamp_ms": 10000,
+      "duration_ms": 150,
+      "params": {}
+    },
+    {
+      "type": "emotion",
+      "timestamp_ms": 12000,
+      "duration_ms": 500,
+      "params": {"emotion": "singing"}
+    },
+    {
+      "type": "look_at",
+      "timestamp_ms": 15000,
+      "duration_ms": 500,
+      "params": {"x": 0, "y": 100, "z": 200}
+    },
+    {
+      "type": "emotion",
+      "timestamp_ms": 20000,
+      "duration_ms": 300,
+      "params": {"emotion": "happy"}
+    },
+    {
+      "type": "wink",
+      "timestamp_ms": 25000,
+      "duration_ms": 200,
+      "params": {"side": "left"}
+    },
+    {
+      "type": "blink",
+      "timestamp_ms": 30000,
+      "duration_ms": 150,
+      "params": {}
+    },
+    {
+      "type": "emotion",
+      "timestamp_ms": 35000,
+      "duration_ms": 500,
+      "params": {"emotion": "excited"}
+    },
+    {
+      "type": "jaw",
+      "timestamp_ms": 40000,
+      "duration_ms": 200,
+      "params": {"angle": 25}
+    },
+    {
+      "type": "jaw",
+      "timestamp_ms": 40500,
+      "duration_ms": 200,
+      "params": {"angle": 10}
+    },
+    {
+      "type": "jaw",
+      "timestamp_ms": 41000,
+      "duration_ms": 200,
+      "params": {"angle": 30}
+    },
+    {
+      "type": "jaw",
+      "timestamp_ms": 41500,
+      "duration_ms": 200,
+      "params": {"angle": 5}
+    },
+    {
+      "type": "talking_stop",
+      "timestamp_ms": 60000,
+      "params": {}
+    },
+    {
+      "type": "emotion",
+      "timestamp_ms": 61000,
+      "duration_ms": 500,
+      "params": {"emotion": "neutral"}
+    },
+    {
+      "type": "look_at",
+      "timestamp_ms": 65000,
+      "duration_ms": 300,
+      "params": {"x": 0, "y": 0, "z": 0}
+    },
+    {
+      "type": "blink",
+      "timestamp_ms": 70000,
+      "duration_ms": 150,
+      "params": {}
+    },
+    {
+      "type": "talking_start",
+      "timestamp_ms": 80000,
+      "params": {}
+    },
+    {
+      "type": "emotion",
+      "timestamp_ms": 85000,
+      "duration_ms": 500,
+      "params": {"emotion": "singing"}
+    },
+    {
+      "type": "blink",
+      "timestamp_ms": 90000,
+      "duration_ms": 150,
+      "params": {}
+    },
+    {
+      "type": "wink",
+      "timestamp_ms": 95000,
+      "duration_ms": 200,
+      "params": {"side": "right"}
+    },
+    {
+      "type": "talking_stop",
+      "timestamp_ms": 120000,
+      "params": {}
+    },
+    {
+      "type": "emotion",
+      "timestamp_ms": 125000,
+      "duration_ms": 500,
+      "params": {"emotion": "happy"}
+    },
+    {
+      "type": "eyes",
+      "timestamp_ms": 130000,
+      "duration_ms": 200,
+      "params": {"x": 30, "y": 10}
+    },
+    {
+      "type": "eyes",
+      "timestamp_ms": 131000,
+      "duration_ms": 200,
+      "params": {"x": -30, "y": 10}
+    },
+    {
+      "type": "eyes",
+      "timestamp_ms": 132000,
+      "duration_ms": 200,
+      "params": {"x": 0, "y": 0}
+    },
+    {
+      "type": "blink",
+      "timestamp_ms": 140000,
+      "duration_ms": 150,
+      "params": {}
+    },
+    {
+      "type": "emotion",
+      "timestamp_ms": 150000,
+      "duration_ms": 500,
+      "params": {"emotion": "excited"}
+    },
+    {
+      "type": "ears",
+      "timestamp_ms": 155000,
+      "duration_ms": 300,
+      "params": {"angle": 20}
+    },
+    {
+      "type": "ears",
+      "timestamp_ms": 156000,
+      "duration_ms": 300,
+      "params": {"angle": -10}
+    },
+    {
+      "type": "ears",
+      "timestamp_ms": 157000,
+      "duration_ms": 300,
+      "params": {"angle": 0}
+    },
+    {
+      "type": "emotion",
+      "timestamp_ms": 170000,
+      "duration_ms": 500,
+      "params": {"emotion": "happy"}
+    },
+    {
+      "type": "blink",
+      "timestamp_ms": 175000,
+      "duration_ms": 150,
+      "params": {}
+    },
+    {
+      "type": "talking_stop",
+      "timestamp_ms": 179000,
+      "params": {}
+    },
+    {
+      "type": "emotion",
+      "timestamp_ms": 179500,
+      "duration_ms": 500,
+      "params": {"emotion": "neutral"}
+    }
+  ]
+}

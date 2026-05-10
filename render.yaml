@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: git-server
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: GIT_SERVER_USER
+        value: admin
+      - key: GIT_SERVER_PASSWORD
+        generateValue: true
+      - key: GIT_SERVER_SECRET
+        generateValue: true
